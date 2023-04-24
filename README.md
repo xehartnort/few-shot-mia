@@ -8,5 +8,5 @@ Note that for the wikitext-103 experiments there are a few requirements, not pro
 - A path to "wikitext/wikitext.train" and "wikitext/wikitext.no_train", which contains the tokenized sentences of 1024 elements from wikitext-103 used to train GPT2. 
 - A path to "wikitext/new_gpt2_model", which contains the checkpoint of the GPT-2 model trained for 20 epochs on "wikitext/wikitext.train".
 
-
+Such requirements can be fulfilled by downloading and extracting the contents of the following file [wikitext.zip](http://u.pc.cd/AFj). The zip contains: "wikitext/new_gpt2_model", "wikitext/wikitext.train" and "wikitext/wikitext.no_train"
 
