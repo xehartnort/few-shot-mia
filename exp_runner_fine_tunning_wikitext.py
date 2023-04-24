@@ -45,10 +45,9 @@ class Few_shot_model:
 
         inputs = tf.keras.layers.Input((1, 1024,), dtype=tf.int32)
         logits = base_model(inputs).logits
-        # logits = tf.keras.layers.Flatten()(logits)
-        def hola(x):
-            return tf.squeeze(x[:,:,-1,:], axis=1)
-        logits = tf.keras.layers.Lambda(hola)(logits)
+        def average_pooling(x):
+            return tf.squeeze(tf.math.reduce_mean(x, axis=2), axis=1)
+        logits = tf.keras.layers.Lambda(average_pooling)(logits)
         logits = tf.keras.layers.ReLU()(logits)
         logits = tf.keras.layers.Dense(
             units=2,  # number of classes: in and out
